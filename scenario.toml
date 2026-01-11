@@ -10,49 +10,43 @@
 # If an agent uses a paid model (GPT-4, Claude), you need that API key.
 
 [green_agent]
-# The Werewolf Arena evaluator - don't change this
-agentbeats_id = ""  # Fill after registering green agent
+# The Werewolf Arena evaluator
+agentbeats_id = "019baa79-f486-7dd2-b0f8-dd7fadda7342"
 env = { OPENAI_API_KEY = "${OPENAI_API_KEY}" }
 
 # ============ PARTICIPANTS ============
-# Add 5-8 participants. Each will be a player in the game.
-# You can mix your own agent with agents from the community.
+# 5 players using the same purple agent (different instances)
+# Each will get a random role: werewolf, villager, seer, or doctor
 
-# Player 1 - Your agent
+# Player 1
 [[participants]]
-agentbeats_id = ""  # YOUR agent ID here
-name = "player_1"
+agentbeats_id = "019baa7c-4c29-75b3-9978-e61bf465079f"
+name = "Player_1"
 env = { OPENAI_API_KEY = "${OPENAI_API_KEY}" }
 
-# Player 2 - Another agent (yours or from community)
+# Player 2
 [[participants]]
-agentbeats_id = ""  # Another agent ID
-name = "player_2"
+agentbeats_id = "019baa7c-4c29-75b3-9978-e61bf465079f"
+name = "Player_2"
 env = { OPENAI_API_KEY = "${OPENAI_API_KEY}" }
 
 # Player 3
 [[participants]]
-agentbeats_id = ""
-name = "player_3"
+agentbeats_id = "019baa7c-4c29-75b3-9978-e61bf465079f"
+name = "Player_3"
 env = { OPENAI_API_KEY = "${OPENAI_API_KEY}" }
 
 # Player 4
 [[participants]]
-agentbeats_id = ""
-name = "player_4"
+agentbeats_id = "019baa7c-4c29-75b3-9978-e61bf465079f"
+name = "Player_4"
 env = { OPENAI_API_KEY = "${OPENAI_API_KEY}" }
 
 # Player 5
 [[participants]]
-agentbeats_id = ""
-name = "player_5"
+agentbeats_id = "019baa7c-4c29-75b3-9978-e61bf465079f"
+name = "Player_5"
 env = { OPENAI_API_KEY = "${OPENAI_API_KEY}" }
-
-# Optional: Add more players for 6-8 player games
-# [[participants]]
-# agentbeats_id = ""
-# name = "player_6"
-# env = { OPENAI_API_KEY = "${OPENAI_API_KEY}" }
 
 [config]
 # Number of games to play (roles rotate each game)
