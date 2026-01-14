@@ -1,0 +1,79 @@
+name: Add Filename to Results
+
+on:
+  pull_request:
+    paths:
+      - 'results/*.json'
+
+jobs:
+  add-filename:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
+      - name: Add filename key to ALL results JSON files
+        run: |
+          modified=false
+
+          # Process ALL JSON files in results folder (not just PR changes)
+          for file in results/*.json; do
+            if [ -f "$file" ]; then
+              filename=$(basename "$file")
+
+              # Check if filename key already exists
+              if ! jq -e '.filename' "$file" > /dev/null 2>&1; then
+                echo "Adding filename to: $file"
+
+                # Add filename as the first key in the JSON
+                jq --arg fn "$filename" '{filename: $fn} + .' "$file" > "${file}.tmp"
+                mv "${file}.tmp" "$file"
+
+                modified=true
+              else
+                echo "Filename already exists in: $file"
+              fi
+            fi
+          done
+
+          echo "modified=$modified" >> $GITHUB_ENV
+
+      - name: Commit changes
+        if: env.modified == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add results/*.json
+          git commit -m "Add filename key to results JSON files"
+          git push
+
+      - name: Verify all results have filename key
+        run: |
+          echo "Verifying all results have filename key..."
+          missing=false
+
+          for file in results/*.json; do
+            if [ -f "$file" ]; then
+              if ! jq -e '.filename' "$file" > /dev/null 2>&1; then
+                echo "ERROR: Missing filename in $file"
+                missing=true
+              fi
+            fi
+          done
+
+          if [ "$missing" = true ]; then
+            echo "::error::Some files are missing the filename key. Cannot merge until fixed."
+            exit 1
+          fi
+
+          echo "All results have filename key!"
