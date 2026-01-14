@@ -104,6 +104,13 @@ jobs:
           git fetch upstream
           git checkout -b ${{ steps.metadata.outputs.branch_name }} upstream/main
 
+      - name: Remove workflow files from submission branch
+        run: |
+          # Remove workflow files to avoid permission errors when pushing
+          # GitHub Apps cannot create/update workflow files without explicit permission
+          rm -rf .github/workflows/
+          git add -A .github/
+
       - name: Commit results
         run: |
           git config user.name "github-actions[bot]"
