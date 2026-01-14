@@ -1,0 +1,71 @@
+name: Process Results on Main
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'results/*.json'
+
+jobs:
+  process-results:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
+      - name: Add filename key to results JSON files
+        id: fix-filename
+        run: |
+          filename_modified=false
+
+          for file in results/*.json; do
+            if [ -f "$file" ]; then
+              filename=$(basename "$file")
+
+              if ! jq -e '.filename' "$file" > /dev/null 2>&1; then
+                echo "Adding filename to: $file"
+                jq --arg fn "$filename" '{filename: $fn} + .' "$file" > "${file}.tmp"
+                mv "${file}.tmp" "$file"
+                filename_modified=true
+              fi
+            fi
+          done
+
+          echo "filename_modified=$filename_modified" >> $GITHUB_OUTPUT
+
+      - name: Calculate ELO ratings
+        id: calculate-elo
+        run: |
+          python scripts/calculate_elo.py
+
+      - name: Check for changes
+        id: check-changes
+        run: |
+          if git diff --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push changes
+        if: steps.check-changes.outputs.has_changes == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add results/*.json elo_state.json indexes/
+          git commit -m "Auto-process results: add filename keys, calculate ELO, update indexes"
+          git push
