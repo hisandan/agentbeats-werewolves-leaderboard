@@ -1,0 +1,58 @@
+name: Auto-fix Filename in Results
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'results/*.json'
+
+jobs:
+  fix-filename:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
+      - name: Add filename key to results JSON files
+        id: fix-files
+        run: |
+          modified=false
+
+          for file in results/*.json; do
+            if [ -f "$file" ]; then
+              filename=$(basename "$file")
+
+              # Check if filename key already exists
+              if ! jq -e '.filename' "$file" > /dev/null 2>&1; then
+                echo "Adding filename to: $file"
+
+                # Add filename as the first key in the JSON
+                jq --arg fn "$filename" '{filename: $fn} + .' "$file" > "${file}.tmp"
+                mv "${file}.tmp" "$file"
+
+                modified=true
+              else
+                echo "Filename already exists in: $file"
+              fi
+            fi
+          done
+
+          echo "modified=$modified" >> $GITHUB_OUTPUT
+
+      - name: Commit and push changes
+        if: steps.fix-files.outputs.modified == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add results/*.json
+          git commit -m "Auto-add filename key to results JSON files"
+          git push

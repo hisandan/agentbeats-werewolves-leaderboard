@@ -1,4 +1,4 @@
-name: Add Filename to Results
+name: Check Filename in Results
 
 on:
   pull_request:
@@ -6,74 +6,42 @@ on:
       - 'results/*.json'
 
 jobs:
-  add-filename:
+  check-filename:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
 
     steps:
-      - name: Checkout PR branch
+      - name: Checkout PR
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref }}
-          fetch-depth: 0
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 1
 
       - name: Install jq
         run: sudo apt-get install -y jq
 
-      - name: Add filename key to ALL results JSON files
+      - name: Check for missing filename keys
         run: |
-          modified=false
+          echo "Checking results JSON files for filename key..."
+          missing_files=""
 
-          # Process ALL JSON files in results folder (not just PR changes)
           for file in results/*.json; do
             if [ -f "$file" ]; then
-              filename=$(basename "$file")
-
-              # Check if filename key already exists
               if ! jq -e '.filename' "$file" > /dev/null 2>&1; then
-                echo "Adding filename to: $file"
-
-                # Add filename as the first key in the JSON
-                jq --arg fn "$filename" '{filename: $fn} + .' "$file" > "${file}.tmp"
-                mv "${file}.tmp" "$file"
-
-                modified=true
+                echo "⚠️  Missing filename in: $file"
+                missing_files="$missing_files $file"
               else
-                echo "Filename already exists in: $file"
+                echo "✅ Filename exists in: $file"
               fi
             fi
           done
 
-          echo "modified=$modified" >> $GITHUB_ENV
-
-      - name: Commit changes
-        if: env.modified == 'true'
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add results/*.json
-          git commit -m "Add filename key to results JSON files"
-          git push
-
-      - name: Verify all results have filename key
-        run: |
-          echo "Verifying all results have filename key..."
-          missing=false
-
-          for file in results/*.json; do
-            if [ -f "$file" ]; then
-              if ! jq -e '.filename' "$file" > /dev/null 2>&1; then
-                echo "ERROR: Missing filename in $file"
-                missing=true
-              fi
-            fi
-          done
-
-          if [ "$missing" = true ]; then
-            echo "::error::Some files are missing the filename key. Cannot merge until fixed."
-            exit 1
+          if [ -n "$missing_files" ]; then
+            echo ""
+            echo "::warning::Some files are missing the 'filename' key:$missing_files"
+            echo ""
+            echo "ℹ️  Don't worry! The filename will be auto-added after merge to main."
+          else
+            echo ""
+            echo "✅ All results have filename key!"
           fi
-
-          echo "All results have filename key!"
