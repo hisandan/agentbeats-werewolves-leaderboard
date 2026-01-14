@@ -1,4 +1,5 @@
 {
+  "filename": "Danisshai-Org-20260114-014423.json",
   "participants": {
     "Player_1": "019baa7c-4c29-75b3-9978-e61bf465079f",
     "Player_2": "019baa7c-4c29-75b3-9978-e61bf465079f",
@@ -177,7 +178,7 @@
           "role": "doctor",
           "action": "protect",
           "decision": "Player_3",
-          "reasoning": "I believe Player_3 may be a valuable asset, potentially the Seer or a vocal villager who could be targeted by the werewolves. Protecting them increases our chances of identifying the werewolf early in the game. Additionally, since there has been no debate yet, it's hard to gauge who might be more targeted, so I\u2019m opting for someone who could be influential in future discussions.",
+          "reasoning": "I believe Player_3 may be a valuable asset, potentially the Seer or a vocal villager who could be targeted by the werewolves. Protecting them increases our chances of identifying the werewolf early in the game. Additionally, since there has been no debate yet, it's hard to gauge who might be more targeted, so I’m opting for someone who could be influential in future discussions.",
           "context": {
             "options": [
               "Player_1",

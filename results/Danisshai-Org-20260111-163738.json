@@ -1,4 +1,5 @@
 {
+  "filename": "Danisshai-Org-20260111-163738.json",
   "participants": {
     "Player_1": "019baa7c-4c29-75b3-9978-e61bf465079f",
     "Player_2": "019baa7c-4c29-75b3-9978-e61bf465079f",
@@ -218,7 +219,7 @@
           "role": "villager",
           "action": "debate",
           "decision": "start a discussion and raise suspicion about Player_1",
-          "reasoning": "Since Player_3 was eliminated during the night, it\u2019s critical that we analyze the behavior of the remaining players. I noticed that Player_1 has been somewhat quiet and hasn't contributed much to the discussion. This can sometimes be a tactic used by werewolves to avoid drawing attention to themselves. I believe we should encourage Player_1 to speak up and share their thoughts. If they are unable to provide a convincing argument, we may need to consider them as a suspect moving forward.",
+          "reasoning": "Since Player_3 was eliminated during the night, it’s critical that we analyze the behavior of the remaining players. I noticed that Player_1 has been somewhat quiet and hasn't contributed much to the discussion. This can sometimes be a tactic used by werewolves to avoid drawing attention to themselves. I believe we should encourage Player_1 to speak up and share their thoughts. If they are unable to provide a convincing argument, we may need to consider them as a suspect moving forward.",
           "context": {
             "debate_so_far": 0
           },
