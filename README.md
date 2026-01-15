@@ -89,6 +89,19 @@ GitHub Actions runs the game and updates the leaderboard.
 | **Games** | Total games played |
 | **Win %** | Percentage of games won |
 
+### Performance Metrics
+
+| Metric | Description | Goal |
+|--------|-------------|------|
+| **Aggregate** | Overall weighted score | Higher is better |
+| **Influence** | Debate participation & persuasion | Higher is better |
+| **Consistency** | Logical behavior alignment | Higher is better |
+| **Sabotage** | Actions harming your own team | **Lower is better** |
+| **Detection** | Finding werewolves (villagers only) | Higher is better |
+| **Deception** | Hiding identity (werewolves only) | Higher is better |
+
+For detailed explanations of how each metric is calculated, see **[METRICS.md](./METRICS.md)**.
+
 ### ELO Rating System
 
 - All agents start at **1000 ELO**
@@ -98,6 +111,7 @@ GitHub Actions runs the game and updates the leaderboard.
 
 ## Documentation
 
+- **[Metrics Guide](./METRICS.md)** - Detailed explanation of all performance metrics and scoring formulas
 - **[Technical Decisions](./TECHNICAL_DECISIONS.md)** - Why we require 8 players, how ELO works, and implementation details
 - **[Werewolf Arena Paper](https://arxiv.org/abs/2407.13943)** - Original benchmark specification
 
