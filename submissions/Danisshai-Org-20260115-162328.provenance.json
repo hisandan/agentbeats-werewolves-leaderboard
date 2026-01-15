@@ -1,0 +1,24 @@
+{
+  "image_digests": {
+    "green-agent": "ghcr.io/sadidromero77/werewolf-agentx-agentbets/green-agent@sha256:8375cff4f04e7e7904f16abf5e6f5c9db025d053556be4e5075747c6bfe4b7dc",
+    "Player_1": "ghcr.io/sadidromero77/werewolf-agentx-agentbets/purple-agent@sha256:2d994f7c40e6163f9a3c1730d0d5d78280be2040e0580ff52051c15a36d8d690",
+    "Player_2": "ghcr.io/sadidromero77/werewolf-agentx-agentbets/purple-agent@sha256:2d994f7c40e6163f9a3c1730d0d5d78280be2040e0580ff52051c15a36d8d690",
+    "Player_3": "ghcr.io/sadidromero77/werewolf-agentx-agentbets/purple-agent@sha256:2d994f7c40e6163f9a3c1730d0d5d78280be2040e0580ff52051c15a36d8d690",
+    "Player_4": "ghcr.io/sadidromero77/werewolf-agentx-agentbets/purple-agent@sha256:2d994f7c40e6163f9a3c1730d0d5d78280be2040e0580ff52051c15a36d8d690",
+    "Player_5": "ghcr.io/sadidromero77/werewolf-agentx-agentbets/purple-agent@sha256:2d994f7c40e6163f9a3c1730d0d5d78280be2040e0580ff52051c15a36d8d690",
+    "Player_6": "ghcr.io/sadidromero77/werewolf-agentx-agentbets/purple-agent@sha256:2d994f7c40e6163f9a3c1730d0d5d78280be2040e0580ff52051c15a36d8d690",
+    "Player_7": "ghcr.io/sadidromero77/werewolf-agentx-agentbets/purple-agent@sha256:2d994f7c40e6163f9a3c1730d0d5d78280be2040e0580ff52051c15a36d8d690",
+    "Player_8": "ghcr.io/sadidromero77/werewolf-agentx-agentbets/purple-agent@sha256:2d994f7c40e6163f9a3c1730d0d5d78280be2040e0580ff52051c15a36d8d690",
+    "agentbeats-client": "ghcr.io/agentbeats/agentbeats-client@sha256:13dfe3ef4e583a80e7ce2fe3becd0ce3b879841368a7f4fa40b6ebbabeeb014e"
+  },
+  "timestamp": "2026-01-15T16:23:28Z",
+  "github_actions": {
+    "run_url": "https://github.com/Danisshai-Org/agentbeats-werewolves-leaderboard-run/actions/runs/21038271580",
+    "run_logs_url": "https://api.github.com/repos/Danisshai-Org/agentbeats-werewolves-leaderboard-run/actions/runs/21038271580/logs",
+    "ref": "refs/heads/main",
+    "sha": "a71512a3c318905ea6027bf0c9f595af9f99c9f8",
+    "repository_url": "https://github.com/Danisshai-Org/agentbeats-werewolves-leaderboard-run",
+    "workflow_ref": "Danisshai-Org/agentbeats-werewolves-leaderboard-run/.github/workflows/run-scenario.yml@refs/heads/main",
+    "workflow_sha": "a71512a3c318905ea6027bf0c9f595af9f99c9f8"
+  }
+}
