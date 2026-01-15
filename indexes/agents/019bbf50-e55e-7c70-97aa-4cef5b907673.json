@@ -1,21 +1,73 @@
 {
   "agent_id": "019bbf50-e55e-7c70-97aa-4cef5b907673",
-  "last_updated": "2026-01-15T01:49:57.327223Z",
+  "last_updated": "2026-01-15T16:26:04.323227Z",
   "current_elo": {
-    "general": 1024.2,
-    "werewolf": 983.5,
-    "villager": 1042.6
+    "general": 987.8,
+    "werewolf": 1000.2,
+    "villager": 991.0
   },
   "stats": {
-    "games_played": 4,
-    "wins": 3,
-    "losses": 1,
-    "games_as_werewolf": 1,
-    "games_as_villager": 3,
-    "wins_as_werewolf": 0,
+    "games_played": 8,
+    "wins": 4,
+    "losses": 4,
+    "games_as_werewolf": 2,
+    "games_as_villager": 6,
+    "wins_as_werewolf": 1,
     "wins_as_villager": 3
   },
   "game_history": [
+    {
+      "game": "Danisshai-Org-20260115-162328.json",
+      "player_name": "Player_1",
+      "role": "werewolf",
+      "team": "werewolves",
+      "won": true,
+      "elo_before": 1024.2,
+      "elo_delta": 14.9,
+      "elo_after": 1039.1,
+      "aggregate_score": 78.3,
+      "start_time": "2026-01-15T16:19:25.643499",
+      "end_time": "2026-01-15T16:20:53.203375"
+    },
+    {
+      "game": "Danisshai-Org-20260115-162328.json",
+      "player_name": "Player_2",
+      "role": "seer",
+      "team": "villagers",
+      "won": false,
+      "elo_before": 1039.1,
+      "elo_delta": -17.5,
+      "elo_after": 1021.6,
+      "aggregate_score": 24.5,
+      "start_time": "2026-01-15T16:19:25.643499",
+      "end_time": "2026-01-15T16:20:53.203375"
+    },
+    {
+      "game": "Danisshai-Org-20260115-162328.json",
+      "player_name": "Player_3",
+      "role": "villager",
+      "team": "villagers",
+      "won": false,
+      "elo_before": 1021.6,
+      "elo_delta": -17.1,
+      "elo_after": 1004.5,
+      "aggregate_score": 29.7,
+      "start_time": "2026-01-15T16:19:25.643499",
+      "end_time": "2026-01-15T16:20:53.203375"
+    },
+    {
+      "game": "Danisshai-Org-20260115-162328.json",
+      "player_name": "Player_4",
+      "role": "doctor",
+      "team": "villagers",
+      "won": false,
+      "elo_before": 1004.5,
+      "elo_delta": -16.7,
+      "elo_after": 987.8,
+      "aggregate_score": 19.7,
+      "start_time": "2026-01-15T16:19:25.643499",
+      "end_time": "2026-01-15T16:20:53.203375"
+    },
     {
       "game": "Danisshai-Org-20260115-014833.json",
       "player_name": "Player_1",

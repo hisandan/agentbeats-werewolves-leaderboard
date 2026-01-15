@@ -1,4 +1,5 @@
 {
+  "filename": "Danisshai-Org-20260115-162328.json",
   "participants": {
     "Player_1": "019bbf50-e55e-7c70-97aa-4cef5b907673",
     "Player_2": "019bbf50-e55e-7c70-97aa-4cef5b907673",
@@ -103,7 +104,8 @@
             "detection_score": 0.0,
             "aggregate_score": 0.7833749999999999
           },
-          "elo_delta": null
+          "elo_delta": 14.9,
+          "elo_after": 1039.1
         },
         {
           "player_name": "Player_2",
@@ -122,7 +124,8 @@
             "deception_score": 0.0,
             "aggregate_score": 0.245
           },
-          "elo_delta": null
+          "elo_delta": -17.5,
+          "elo_after": 1021.6
         },
         {
           "player_name": "Player_3",
@@ -141,7 +144,8 @@
             "deception_score": 0.0,
             "aggregate_score": 0.29700000000000004
           },
-          "elo_delta": null
+          "elo_delta": -17.1,
+          "elo_after": 1004.5
         },
         {
           "player_name": "Player_4",
@@ -160,7 +164,8 @@
             "deception_score": 0.0,
             "aggregate_score": 0.197
           },
-          "elo_delta": null
+          "elo_delta": -16.7,
+          "elo_after": 987.8
         },
         {
           "player_name": "Player_5",
@@ -179,7 +184,8 @@
             "deception_score": 0.0,
             "aggregate_score": 0.36012500000000003
           },
-          "elo_delta": null
+          "elo_delta": -15.7,
+          "elo_after": 959.3
         },
         {
           "player_name": "Player_6",
@@ -198,7 +204,8 @@
             "deception_score": 0.0,
             "aggregate_score": 0.27137500000000003
           },
-          "elo_delta": null
+          "elo_delta": -15.3,
+          "elo_after": 944.0
         },
         {
           "player_name": "Player_7",
@@ -217,7 +224,8 @@
             "deception_score": 0.0,
             "aggregate_score": 0.30900000000000005
           },
-          "elo_delta": null
+          "elo_delta": -15.0,
+          "elo_after": 929.0
         },
         {
           "player_name": "Player_8",
@@ -236,7 +244,8 @@
             "detection_score": 0.0,
             "aggregate_score": 0.7833749999999999
           },
-          "elo_delta": null
+          "elo_delta": 17.4,
+          "elo_after": 946.4
         }
       ]
     },

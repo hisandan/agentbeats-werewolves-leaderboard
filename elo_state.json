@@ -1,28 +1,28 @@
 {
-  "last_updated": "2026-01-15T01:49:57.325418Z",
+  "last_updated": "2026-01-15T16:26:04.321695Z",
   "agents": {
     "019baa7c-4c29-75b3-9978-e61bf465079f": {
-      "general_elo": 975.0,
-      "werewolf_elo": 988.6,
-      "villager_elo": 980.9,
-      "games_played": 28,
-      "wins": 13,
-      "losses": 15,
-      "games_as_werewolf": 7,
-      "games_as_villager": 21,
-      "wins_as_werewolf": 4,
+      "general_elo": 946.4,
+      "werewolf_elo": 1003.2,
+      "villager_elo": 934.1,
+      "games_played": 32,
+      "wins": 14,
+      "losses": 18,
+      "games_as_werewolf": 8,
+      "games_as_villager": 24,
+      "wins_as_werewolf": 5,
       "wins_as_villager": 9
     },
     "019bbf50-e55e-7c70-97aa-4cef5b907673": {
-      "general_elo": 1024.2,
-      "werewolf_elo": 983.5,
-      "villager_elo": 1042.6,
-      "games_played": 4,
-      "wins": 3,
-      "losses": 1,
-      "games_as_werewolf": 1,
-      "games_as_villager": 3,
-      "wins_as_werewolf": 0,
+      "general_elo": 987.8,
+      "werewolf_elo": 1000.2,
+      "villager_elo": 991.0,
+      "games_played": 8,
+      "wins": 4,
+      "losses": 4,
+      "games_as_werewolf": 2,
+      "games_as_villager": 6,
+      "wins_as_werewolf": 1,
       "wins_as_villager": 3
     }
   },
@@ -30,6 +30,7 @@
     "Danisshai-Org-20260114-165315.json",
     "Danisshai-Org-20260114-171437.json",
     "Danisshai-Org-20260115-011758.json",
-    "Danisshai-Org-20260115-014833.json"
+    "Danisshai-Org-20260115-014833.json",
+    "Danisshai-Org-20260115-162328.json"
   ]
 }

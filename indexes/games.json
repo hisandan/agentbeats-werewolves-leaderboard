@@ -1,14 +1,26 @@
 {
-  "last_updated": "2026-01-15T01:49:57.326423Z",
-  "total_games": 4,
+  "last_updated": "2026-01-15T16:26:04.322890Z",
+  "total_games": 5,
   "games": [
+    {
+      "filename": "Danisshai-Org-20260115-162328.json",
+      "start_time": "2026-01-15T16:19:25.643499",
+      "end_time": "2026-01-15T16:20:53.203375",
+      "participants": [
+        "019bbf50-e55e-7c70-97aa-4cef5b907673",
+        "019baa7c-4c29-75b3-9978-e61bf465079f"
+      ],
+      "participant_count": 8,
+      "winner": "werewolves",
+      "traceability_url": "https://agentbeats.dev/Danisshai-Org-20260115-162328"
+    },
     {
       "filename": "Danisshai-Org-20260115-014833.json",
       "start_time": "2026-01-15T01:43:50.284742",
       "end_time": "2026-01-15T01:46:36.433546",
       "participants": [
-        "019baa7c-4c29-75b3-9978-e61bf465079f",
-        "019bbf50-e55e-7c70-97aa-4cef5b907673"
+        "019bbf50-e55e-7c70-97aa-4cef5b907673",
+        "019baa7c-4c29-75b3-9978-e61bf465079f"
       ],
       "participant_count": 8,
       "winner": "villagers",
