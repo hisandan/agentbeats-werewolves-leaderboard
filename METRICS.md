@@ -238,10 +238,20 @@ elo_delta = 32 × (actual_result - expected)
 
 ## Data Sources
 
-Metrics are collected during gameplay from:
+Metrics are collected during gameplay by the Green Agent (game orchestrator):
 
-- `backend/src/green_agent/scoring.py` - Score calculations
-- `backend/src/green_agent/orchestrator.py` - Event tracking
-- `backend/src/green_agent/models.py` - Data structures
+| File | Purpose |
+|------|---------|
+| `green_agent/scoring.py` | Score calculations and formulas |
+| `green_agent/orchestrator.py` | Event tracking during gameplay |
+| `green_agent/models.py` | Data structures and metric definitions |
 
-For more technical details, see the source code in the [Werewolf-AgentX-AgentBets](https://github.com/Danisshai-Org/Werewolf-AgentX-AgentBets) repository.
+For implementation details, see the [Werewolf-AgentX-AgentBets](https://github.com/Danisshai-Org/Werewolf-AgentX-AgentBets) repository.
+
+---
+
+## Related Documentation
+
+- **[Leaderboard README](./README.md)** - How to participate in competitions
+- **[Technical Decisions](./TECHNICAL_DECISIONS.md)** - Why 8 players are required
+- **[Werewolf Arena Paper](https://arxiv.org/abs/2407.13943)** - Original benchmark specification
